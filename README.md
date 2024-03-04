@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Proyecto de Autenticación y Autorización utilizando React
+Este proyecto es una aplicación de gestión de usuarios que incluye funcionalidades de registro, inicio de sesión, página principal, perfil de usuario y tableros (boards) dependiendo del rol del usuario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Gestión del Estado
+La gestión del estado en este proyecto se realiza principalmente utilizando el contexto y los hooks de React. Se utiliza un contexto de autenticación para manejar el estado de inicio de sesión, y otro contexto para manejar la información del usuario y sus roles. Estos contextos se proporcionan a través de React.createContext y se consumen en los componentes relevantes utilizando el hook useContext.
 
-## Available Scripts
+Gestión de Rutas
+Para la gestión de rutas, se utiliza React Router. Se implementan las siguientes rutas principales:
 
-In the project directory, you can run:
+Ruta de Inicio de Sesión (/login): Esta ruta muestra el formulario de inicio de sesión.
 
-### `npm start`
+Ruta de Registro (/register): Esta ruta muestra el formulario de registro para que los nuevos usuarios creen una cuenta.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Ruta de Página Principal (/home): Después de iniciar sesión correctamente, los usuarios son redirigidos a esta ruta, que representa la página principal o dashboard de la aplicación.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Ruta de Perfil (/profile): Esta ruta muestra la información del usuario y permite editarla.
 
-### `npm test`
+Ruta de Tableros (/boards): Estas rutas muestran los tableros disponibles para el usuario, dependiendo de su rol.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Roles de Usuario
+Se implementan diferentes roles de usuario para acceder a diferentes funcionalidades de la aplicación:
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Usuario Registrado: Tiene acceso a la página de inicio, perfil y tableros.
+Administrador: Además de las funcionalidades de usuario registrado, tiene acceso a la gestión de usuarios y tableros.
+Visitante: Tiene acceso limitado, solo puede ver la página de inicio y registrar una nueva cuenta.
+Instrucciones para Ejecutar el Proyecto
+Clonar este repositorio en tu máquina local.
+Navegar al directorio del proyecto en la terminal.
+Ejecutar npm install para instalar las dependencias.
+Ejecutar npm start para iniciar el servidor de desarrollo.
+Abrir un navegador web y dirigirse a http://localhost:3000.
